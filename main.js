@@ -4,5 +4,7 @@ var client = new WebTorrent()
 window.DragDrop('body', function (files) {
     client.seed(files, function (torrent) {
         console.log('Client is seeding:', torrent.infoHash)
+        var f = torrent.files[0];
+        f.renderTo('#video');
     })
 })
